@@ -3,7 +3,7 @@ module.exports = {
     title: `notluckyenough`,
     siteUrl: `notluckyenough.com`,
     description: `not lucky enough :(`,
- 
+    author: `khosi`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
