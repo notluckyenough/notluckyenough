@@ -1,21 +1,32 @@
-import React from "react"
-import { Link } from "gatsby"
+import React, { Component } from "react"
+// import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
+// import Image from "../components/image"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+import graveyard from "../graveyard.json"
+
+import { Container, Row, Col } from "react-bootstrap"
+
+class IndexPage extends Component {
+  render() {
+    return (
+      <Layout>
+        <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+
+        <Container>
+          <Row>
+            {graveyard.map(dead => (
+              <Col xl="4" lg="4" md="6" sm="6" xs="12" key={dead.name}>
+                <a href={dead.link}>{dead.name}</a>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </Layout>
+    )
+  }
+}
 
 export default IndexPage

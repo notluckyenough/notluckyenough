@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: `notluckyenough`,
-    siteUrl: `notluckyenough.com`,
+    siteUrl: `http://notluckyenough.com`,
     description: `not lucky enough :(`,
-    author: `khosi`
+    author: `khosi`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
