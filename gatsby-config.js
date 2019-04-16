@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     siteUrl: `http://notluckyenough.com`,
     title: `Not Lucky Enough`,
-    description: `not lucky enough :(`,
+    description: `not lucky enough`,
     author: `@gatsbyjs`,
   },
   plugins: [
