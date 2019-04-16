@@ -1,11 +1,11 @@
-import PropTypes from "prop-types"
 import React from "react"
 import { Nav } from "react-bootstrap"
-import logo from "../../static/images/nle.svg"
+import Logo from "../../static/images/nle.svg"
+import { Container, Row, Col } from "react-bootstrap"
 
-const Header = ({ siteTitle }) => (
+const Header = () => (
   <>
-    <Nav className="justify-content-center bg-dark" activeKey="/home">
+    <Nav className="justify-content-center bg-dark">
       <Nav.Item>
         <Nav.Link
           className="text-light"
@@ -20,17 +20,14 @@ const Header = ({ siteTitle }) => (
         </Nav.Link>
       </Nav.Item>
     </Nav>
-    <img src={logo} alt="logo" />
-    <p className="text-center mt-4 mb-4"> {siteTitle}</p>
+    <Container>
+      <Row className="justify-content-center">
+        <Col className="text-center m-5">
+          <Logo />
+        </Col>
+      </Row>
+    </Container>
   </>
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header

@@ -1,12 +1,8 @@
 import React, { Component } from "react"
-// import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-// import Image from "../components/image"
 import SEO from "../components/seo"
-
 import graveyard from "../graveyard.json"
-
 import { Container, Row, Col } from "react-bootstrap"
 
 class IndexPage extends Component {
@@ -17,9 +13,21 @@ class IndexPage extends Component {
 
         <Container>
           <Row>
-            {graveyard.map(dead => (
-              <Col xl="4" lg="4" md="6" sm="6" xs="12" key={dead.name}>
-                <a href={dead.link}>{dead.name}</a>
+            {graveyard.map((dead, index) => (
+              <Col xl="4" lg="4" md="6" sm="6" xs="12" key={index}>
+                <hr />
+                <Row>
+                  <Col className="p-2 text-right">
+                    <a className="text-dark" href={dead.link}>
+                      {dead.name}
+                    </a>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col className="text-secondary p-2 text-right">
+                    {dead.description}
+                  </Col>
+                </Row>
               </Col>
             ))}
           </Row>
